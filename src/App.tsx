@@ -1,15 +1,16 @@
-// Import this if your are using react-bootstrap library
-import "bootstrap/dist/css/bootstrap.min.css"; 
-
-import "./App.css";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import Welcome from "./components/Welcome";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
     <div>
-      <TodoForm />
-      <TodoList />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/homepage" element={<Homepage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
